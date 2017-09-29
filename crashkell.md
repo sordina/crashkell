@@ -88,6 +88,11 @@ let (a,b) = (1,2,3) in a * 2 + b * 3
 product (1,2,3)
 ```
 
+```why
+The product function takes a list.
+Lists are written using square brackets.
+```
+
 ## Exercise: Ranges
 
 ```haskell
