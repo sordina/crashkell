@@ -63,6 +63,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#exercise-parens">Exercise: Parens</a></li>
 <li><a href="#exercise-combining-strings">Exercise: Combining Strings</a></li>
 </ul></li>
+<li><a href="#chapter-booleans">Chapter: Booleans</a><ul>
+<li><a href="#exercise-equality">Exercise: Equality</a></li>
+</ul></li>
 <li><a href="#chapter-tuples">Chapter: Tuples</a></li>
 <li><a href="#chapter-numbers">Chapter: Numbers</a><ul>
 <li><a href="#exercise-multiplication">Exercise: Multiplication</a></li>
@@ -100,12 +103,29 @@ let
     in print p
 ```
 -->
+<h1 id="chapter-booleans">Chapter: Booleans</h1>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">if</span> true <span class="kw">then</span> <span class="dv">1</span> <span class="kw">else</span> <span class="dv">2</span></code></pre></div>
+<pre class="why"><code>Booleans True and False start with capital letters.</code></pre>
+<h2 id="exercise-equality">Exercise: Equality</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="dv">1</span> <span class="fu">+</span> <span class="dv">1</span> <span class="fu">==</span> <span class="st">&quot;Two&quot;</span></code></pre></div>
+<pre class="why"><code>Only things of the same type can be compared for equality.
+
+For example: Two numbers, two strings, etc.</code></pre>
 <h1 id="chapter-tuples">Chapter: Tuples</h1>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> (a,b) <span class="fu">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="kw">in</span> a <span class="fu">*</span> <span class="dv">2</span> <span class="fu">+</span> b <span class="fu">*</span> <span class="dv">3</span></code></pre></div>
 <h1 id="chapter-numbers">Chapter: Numbers</h1>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="dv">1</span> <span class="fu">?</span> <span class="dv">1</span> <span class="fu">==</span> <span class="dv">2</span></code></pre></div>
 <h2 id="exercise-multiplication">Exercise: Multiplication</h2>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">(<span class="dv">2</span> <span class="fu">*</span> <span class="dv">2</span> <span class="fu">+</span> <span class="dv">3</span>, <span class="dv">3</span> <span class="fu">+</span> <span class="dv">2</span> <span class="fu">*</span> <span class="dv">2</span>, (<span class="dv">3</span> <span class="fu">+</span> <span class="dv">2</span>) <span class="fu">*</span> <span class="dv">2</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> x<span class="fu">@</span>(<span class="dv">7</span>,<span class="dv">10</span>,<span class="dv">10</span>) <span class="fu">=</span> (<span class="dv">2</span> <span class="fu">*</span> <span class="dv">2</span> <span class="fu">+</span> <span class="dv">3</span>, <span class="dv">3</span> <span class="fu">+</span> <span class="dv">2</span> <span class="fu">*</span> <span class="dv">2</span>, (<span class="dv">3</span> <span class="fu">+</span> <span class="dv">2</span>) <span class="fu">*</span> <span class="dv">2</span>) <span class="kw">in</span> x</code></pre></div>
+<pre class="why"><code>BFIMDAS precendence is followed. Use parens for specific groupings.
+
+Brackets
+Functions
+Indices
+Multiplication
+Division
+Addition
+Subtraction</code></pre>
 <h1 id="chapter-lists">Chapter: Lists</h1>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">product (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</code></pre></div>
 <pre class="why"><code>The product function takes a list.

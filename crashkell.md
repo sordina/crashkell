@@ -64,6 +64,28 @@ let
 ```
 -->
 
+# Chapter: Booleans
+
+```haskell
+if true then 1 else 2
+```
+
+```why
+Booleans True and False start with capital letters.
+```
+
+## Exercise: Equality
+
+```haskell
+1 + 1 == "Two"
+```
+
+```why
+Only things of the same type can be compared for equality.
+
+For example: Two numbers, two strings, etc.
+```
+
 # Chapter: Tuples
 
 ```haskell
@@ -79,7 +101,19 @@ let (a,b) = (1,2,3) in a * 2 + b * 3
 ## Exercise: Multiplication
 
 ```haskell
-(2 * 2 + 3, 3 + 2 * 2, (3 + 2) * 2)
+let x@(7,10,10) = (2 * 2 + 3, 3 + 2 * 2, (3 + 2) * 2) in x
+```
+
+```why
+BFIMDAS precendence is followed. Use parens for specific groupings.
+
+Brackets
+Functions
+Indices
+Multiplication
+Division
+Addition
+Subtraction
 ```
 
 # Chapter: Lists

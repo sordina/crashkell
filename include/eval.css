@@ -13,6 +13,7 @@ pre.success.stdout::before {
 
 pre.error {
 	border-color: red;
+  max-height: 150px;
 }
 
 pre.error.network::before {
@@ -22,4 +23,10 @@ pre.error.network::before {
 pre.why {
   border-style: dashed !important;
   background: white;
+}
+
+button {
+  z-index: 1000;
+  background: white;
+  border: 0;
 }

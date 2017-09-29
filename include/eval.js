@@ -17,7 +17,7 @@ function makeResults(elem) {
 }
 
 function nextWhy(e) {
-	if(!e) {
+	if(!e[0]) {
 		return;
 	}
 	if(e.prop("tagName").match(/^H/)) {
@@ -64,7 +64,7 @@ function hook(el) {
 					why.slideDown('slow');
 					button.hide();
 			});
-			p.text(data.error);
+			p.text("\n" + data.error);
 			if(why && why[0] && ! why.is(':visible')) {
 				console.log('why')
 				console.log(why)
