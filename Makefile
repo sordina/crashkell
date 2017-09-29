@@ -15,7 +15,7 @@ all: crashkell.html crashkell_inline.html
 
 .PHONY: devel
 devel:
-	commando -p cat | grep --line-buffered casestudy.md | conscript make display-html
+	commando -p cat | grep --line-buffered 'md\|Make\|css\|js' | conscript make display-html
 
 .PHONY: devel
 open-devel:
@@ -32,12 +32,14 @@ progress:
 	grep '^\#' crashkell.md
 
 crashkell.html: crashkell.md include/scripts.html include/css.html
+	@ echo building
 	@ cat crashkell.md            \
 	  | pandoc --toc --toc-depth=2 -s      \
 	    -H include/css.html                \
 	    -H include/javascript.html         \
 	    -A include/scripts.html            \
 	-o crashkell.html
+	@ echo built!
 
 crashkell_inline.html: crashkell.html
 	inliner -m crashkell.html > crashkell_inline.html

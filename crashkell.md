@@ -6,20 +6,38 @@ geometry: top=3cm, bottom=4cm, left=2cm, right=2cm
 
 \clearpage
 
-# Chapter 1
+# Chapter 1: Strings
 
 ```haskell
-prinp "All about strings!"
+"All about strings!
 ```
 
-## Exercise 1
+## Exercise: "Hello World"
 
 ```haskell
-print "Hello Sworld"
+prinp "Hello Sworld"
 ```
 
-## Exercise 2
+## Exercise: Parens
+
+```haskell
+(print "Hi!"))
+```
+
+## Exercise: Combining Strings
 
 ```haskell
 print "Hello" ++ "World"
 ```
+
+<!--
+## Exercise: Variables
+
+```haskell
+let
+		h = "Hello"
+		W = "World"
+		p = h ++ " " ++ w
+	in print p
+```
+-->

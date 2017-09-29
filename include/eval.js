@@ -2,7 +2,8 @@
 ddd = null;
 
 function hook(el) {
-	var code    = $(el).parent(".sourceCode")
+	var elem    = $(el)
+	var code    = elem.parent(".sourceCode")
 	var results = code.next(".results")
 	if(! results[0]) {
 		results = $("<div class='results'></div>")
@@ -18,9 +19,16 @@ function hook(el) {
 
 		results.empty()
 		if(data.success) {
-			var p = $("<pre class='success'></pre>");
-					p.text(data.success.stdout);
-			results.append(p);
+			if(data.success.value !== "()") {
+				var p = $("<pre class='success value'></pre>");
+						p.text(data.success.value);
+				results.append(p);
+			}
+			if(data.success.stdout[0]) {
+				var p = $("<pre class='success stdout'></pre>");
+						p.text(data.success.stdout);
+				results.append(p);
+			}
 		}
 		if(data.error) {
 			var p = $("<pre class='error'></pre>");
@@ -30,10 +38,23 @@ function hook(el) {
 	}
 }
 
-$("code.haskell").click(function(e){
-	$.post(
-		"/eval",
-		{"exp": $(this).text()},
-		hook(this)
-	)
-})
+function setup(e){
+	var elem   = $(this);
+	var parent = elem.parent('.sourceCode');
+	var button = $("<button>Run!</button>");
+
+	elem.prop('contenteditable', true);
+	parent.append( button );
+	button.css({float: "right"})
+	button.click(function() {
+		var text = elem.text();
+		console.log(text)
+		$.post(
+			"/eval",
+			{"exp": text },
+			hook(elem)
+		)
+	})
+}
+
+$("code.haskell").each( setup );

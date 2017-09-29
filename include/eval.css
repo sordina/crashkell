@@ -3,6 +3,14 @@ pre.success {
 	border-color: green;
 }
 
+pre.success.stdout::before {
+    content: "stdout: ";
+}
+
+pre.success.value::before {
+    content: "value: ";
+}
+
 pre.error {
 	border-color: red;
 }
