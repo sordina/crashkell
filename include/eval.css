@@ -1,4 +1,8 @@
 
+.results {
+  padding-bottom: 0.5em;
+}
+
 pre.success {
 	border-color: green;
 }
@@ -13,4 +17,9 @@ pre.error {
 
 pre.error.network::before {
   content: "Network Error: ";
+}
+
+pre.why {
+  border-style: dashed !important;
+  background: white;
 }

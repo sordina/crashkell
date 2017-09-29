@@ -57,22 +57,38 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="TOC">
 <ul>
-<li><a href="#chapter-1-strings">Chapter 1: Strings</a><ul>
+<li><a href="#chapter-strings">Chapter: Strings</a><ul>
 <li><a href="#exercise-hello-world">Exercise: &quot;Hello World&quot;</a></li>
+<li><a href="#exercise-quoth-the-raven">Exercise: Quoth the Raven</a></li>
 <li><a href="#exercise-parens">Exercise: Parens</a></li>
 <li><a href="#exercise-combining-strings">Exercise: Combining Strings</a></li>
 </ul></li>
+<li><a href="#chapter-tuples">Chapter: Tuples</a></li>
+<li><a href="#chapter-numbers">Chapter: Numbers</a><ul>
+<li><a href="#exercise-multiplication">Exercise: Multiplication</a></li>
+</ul></li>
+<li><a href="#chapter-lists">Chapter: Lists</a><ul>
+<li><a href="#exercise-ranges">Exercise: Ranges</a></li>
+<li><a href="#exercise-mapping">Exercise: Mapping</a></li>
+</ul></li>
+<li><a href="#chapter-lambdas">Chapter: Lambdas</a></li>
 </ul>
 </div>
 <p></p>
-<h1 id="chapter-1-strings">Chapter 1: Strings</h1>
+<h1 id="chapter-strings">Chapter: Strings</h1>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="st">&quot;All about strings!</span></code></pre></div>
+<pre class="why"><code>Strings must be quoted with an open and close quote.</code></pre>
 <h2 id="exercise-hello-world">Exercise: &quot;Hello World&quot;</h2>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">prinp <span class="st">&quot;Hello Sworld&quot;</span></code></pre></div>
+<pre class="why"><code>You can print anything showable to STDOUT using the &quot;print&quot; function.</code></pre>
+<h2 id="exercise-quoth-the-raven">Exercise: Quoth the Raven</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ch">&#39;Nevermore&#39;</span></code></pre></div>
+<pre class="why"><code>Strings must be quoted with double-quotes.</code></pre>
 <h2 id="exercise-parens">Exercise: Parens</h2>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">(print <span class="st">&quot;Hi!&quot;</span>))</code></pre></div>
 <h2 id="exercise-combining-strings">Exercise: Combining Strings</h2>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">print <span class="st">&quot;Hello&quot;</span> <span class="fu">++</span> <span class="st">&quot;World&quot;</span></code></pre></div>
+<pre class="why"><code>Parenthesise your constructed string.</code></pre>
 <!--
 ## Exercise: Variables
 
@@ -84,6 +100,20 @@ let
     in print p
 ```
 -->
+<h1 id="chapter-tuples">Chapter: Tuples</h1>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="kw">let</span> (a,b) <span class="fu">=</span> (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="kw">in</span> a <span class="fu">*</span> <span class="dv">2</span> <span class="fu">+</span> b <span class="fu">*</span> <span class="dv">3</span></code></pre></div>
+<h1 id="chapter-numbers">Chapter: Numbers</h1>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="dv">1</span> <span class="fu">?</span> <span class="dv">1</span> <span class="fu">==</span> <span class="dv">2</span></code></pre></div>
+<h2 id="exercise-multiplication">Exercise: Multiplication</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">(<span class="dv">2</span> <span class="fu">*</span> <span class="dv">2</span> <span class="fu">+</span> <span class="dv">3</span>, <span class="dv">3</span> <span class="fu">+</span> <span class="dv">2</span> <span class="fu">*</span> <span class="dv">2</span>, (<span class="dv">3</span> <span class="fu">+</span> <span class="dv">2</span>) <span class="fu">*</span> <span class="dv">2</span>)</code></pre></div>
+<h1 id="chapter-lists">Chapter: Lists</h1>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">product (<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</code></pre></div>
+<h2 id="exercise-ranges">Exercise: Ranges</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">[<span class="dv">10</span><span class="fu">..</span><span class="dv">1</span>]</code></pre></div>
+<h2 id="exercise-mapping">Exercise: Mapping</h2>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">map succ [<span class="dv">1</span><span class="fu">..</span><span class="dv">10</span>]</code></pre></div>
+<h1 id="chapter-lambdas">Chapter: Lambdas</h1>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">map (\x <span class="ot">-&gt;</span> x<span class="fu">+</span><span class="dv">1</span>) [<span class="dv">1</span><span class="fu">..</span><span class="dv">10</span>]</code></pre></div>
 <p><br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /></p>
 
 <script src="include/scrollspy.js"></script>
