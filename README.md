@@ -2,7 +2,7 @@
 
 Build with `make all`.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZybBRGWt--I" frameborder="0" allowfullscreen></iframe>
+Video: <https://youtu.be/ZybBRGWt--I>
 
 You will need the following dependencies:
 
