@@ -14,3 +14,7 @@ pre.success.value::before {
 pre.error {
 	border-color: red;
 }
+
+pre.error.network::before {
+  content: "Network Error: ";
+}

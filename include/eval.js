@@ -1,16 +1,21 @@
 
 ddd = null;
 
-function hook(el) {
-	var elem    = $(el)
+function makeResults(elem) {
 	var code    = elem.parent(".sourceCode")
 	var results = code.next(".results")
 	if(! results[0]) {
 		results = $("<div class='results'></div>")
 		code.after(results)
 	}
-	results.empty()
-	results.text("Results loading...")
+	return results;
+}
+
+function hook(el) {
+	var elem    = $(el);
+	var results = makeResults(elem);
+	results.empty();
+	results.text("Results loading...");
 
 	return function(data) {
 		console.log(data)
@@ -38,6 +43,19 @@ function hook(el) {
 	}
 }
 
+function error(elem) {
+	return function(data, status, msg) {
+		console.log(data);
+		console.log(status);
+		console.log(msg);
+		var results = makeResults(elem);
+		var p = $("<pre class='error network'></pre>");
+				p.text(status);
+		results.empty()
+		results.append(p);
+	}
+}
+
 function setup(e){
 	var elem   = $(this);
 	var parent = elem.parent('.sourceCode');
@@ -53,7 +71,7 @@ function setup(e){
 			"/eval",
 			{"exp": text },
 			hook(elem)
-		)
+		).fail(error(elem))
 	})
 }
 
