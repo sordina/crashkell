@@ -1,0 +1,8 @@
+
+pre.success {
+	border-color: green;
+}
+
+pre.error {
+	border-color: red;
+}

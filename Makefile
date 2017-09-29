@@ -15,8 +15,12 @@ all: crashkell.html crashkell_inline.html
 
 .PHONY: devel
 devel:
-	open crashkell.html
 	commando -p cat | grep --line-buffered casestudy.md | conscript make display-html
+
+.PHONY: devel
+open-devel:
+	open crashkell.html
+	make devel
 
 .PHONY: display-html
 display-html:
@@ -27,7 +31,7 @@ display-html:
 progress:
 	grep '^\#' crashkell.md
 
-crashkell.html: crashkell.md
+crashkell.html: crashkell.md include/scripts.html include/css.html
 	@ cat crashkell.md            \
 	  | pandoc --toc --toc-depth=2 -s      \
 	    -H include/css.html                \
