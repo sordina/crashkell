@@ -5,6 +5,7 @@
 
 pre.success {
 	border-color: green;
+  max-height: 200px;
 }
 
 pre.success.stdout::before {

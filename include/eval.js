@@ -17,15 +17,10 @@ function makeResults(elem) {
 }
 
 function nextWhy(e) {
-	if(!e[0]) {
-		return;
-	}
-	if(e.prop("tagName").match(/^H/)) {
-		return;
-	}
-	if(e.hasClass('why')) {
-		return e;
-	}
+	if(!e) { return; }
+	if(!e[0]) { return; }
+	if(e.prop("tagName").match(/^H/)) { return; }
+	if(e.hasClass('why')) { return e; }
 	return nextWhy(e.next());
 }
 
