@@ -31,8 +31,13 @@ function hook(el) {
 			}
 			if(data.success.stdout[0]) {
 				var p = $("<pre class='success stdout'></pre>");
-						p.text(data.success.stdout);
-				results.append(p);
+				if(data.success.stdout[1]) {
+						p.text("\n\n" + data.success.stdout.join(""));
+					results.append(p);
+				} else {
+						p.text(data.success.stdout[0]);
+					results.append(p);
+				}
 			}
 		}
 		if(data.error) {
@@ -56,13 +61,25 @@ function error(elem) {
 	}
 }
 
+function tabCatcher(elem, button) {
+	return function(e) {
+		var keyCode = e.keyCode || e.which;
+		if (keyCode == 9) {
+			console.log("catching tabs")
+			e.preventDefault();
+			button.focus()
+		}
+	}
+}
+
 function setup(e){
 	var elem   = $(this);
 	var parent = elem.parent('.sourceCode');
 	var button = $("<button>Run!</button>");
 
 	elem.prop('contenteditable', true);
-	parent.append( button );
+	elem.on('keydown', tabCatcher(elem, button));
+	parent.prepend( button );
 	button.css({float: "right"})
 	button.click(function() {
 		var text = elem.text();
