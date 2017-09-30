@@ -29,5 +29,9 @@ pre.why {
 button {
   z-index: 1000;
   background: white;
-  border: 0;
+  border: 1px solid white;
+}
+
+button:focus {
+  border: 1px dashed black;
 }
