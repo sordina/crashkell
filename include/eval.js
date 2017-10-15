@@ -36,8 +36,9 @@ function hook(el) {
 		results.empty()
 		if(data.success) {
 			if(data.success.value !== "()") {
+				var valueText = data.success.value + "\n :: " + data.success.type;;
 				var p = $("<pre class='success value'></pre>");
-						p.text(data.success.value);
+						p.text(valueText);
 				results.append(p);
 			}
 			if(data.success.stdout[0]) {
@@ -59,7 +60,7 @@ function hook(el) {
 					why.slideDown('slow');
 					button.hide();
 			});
-			p.text("\n" + data.error);
+			p.text(data.error);
 			if(why && why[0] && ! why.is(':visible')) {
 				console.log('why')
 				console.log(why)
@@ -116,4 +117,16 @@ function setup(e){
 	})
 }
 
-$("code.haskell").each( setup );
+$.post(
+	"/eval",
+	{"exp": "1+1" },
+	function(data) {
+		console.log("Successful evaluation test, setting up");
+		console.log(data);
+		$("code.haskell").each( setup );
+	}
+).fail( function(error) {
+	console.log("evaluation failed...");
+	console.log(this);
+	console.log(error);
+})
