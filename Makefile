@@ -25,7 +25,7 @@ open-devel:
 .PHONY: display-html
 display-html:
 	@ make crashkell.html
-	@ chromereload crashkell
+	@ firefoxreload crashkell
 
 .PHONY: progress
 progress:

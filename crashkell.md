@@ -86,6 +86,44 @@ Only things of the same type can be compared for equality.
 For example: Two numbers, two strings, etc.
 ```
 
+
+# Chapter: Lists
+
+```haskell
+[1,2,3
+```
+
+```why
+Use balanced square braces to construct lists!
+```
+
+
+## Exercise: Explicit Constructors
+
+```haskell
+1:2:3:[] == [1,2,3]
+```
+
+```haskell
+let (_:x:y:_) = [1..100] in [y,y,y,x]
+```
+
+## Exercise: Enumerations
+
+```haskell
+[1,2,3,4,5,6] == [1..6]
+```
+
+```haskell
+[1..6] == enumFromTo 1 6
+```
+
+## Exercise: Zipping
+
+```haskell
+[5,7,9] == zipWith (+) [1..3] [4..6]
+```
+
 # Chapter: Tuples
 
 ```haskell
@@ -96,6 +134,10 @@ let (a,b) = (1,2,3) in a * 2 + b * 3
 
 ```haskell
 1 ? 1 == 2
+```
+
+```why
+You can combine numbers with the usual arithmatic operations such as +, *, etc.
 ```
 
 ## Exercise: Multiplication
