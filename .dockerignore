@@ -1,7 +1,4 @@
-*.hi
 Untitled*.ipynb
-main/Main
-.stack-work
 notebooks/Test.ipynb
 notebooks/Untitled.ipynb
 notebooks/Untitled0.ipynb
@@ -11,12 +8,10 @@ notebooks/Untitled0.ipynb
 dist
 IHaskell/GHC
 env
-.shelly
 .ihaskell_capture
 .ipynb_checkpoints
 Hspec
 todo
-profile/profile.tar
 .cabal-sandbox
 cabal.sandbox.config
 .tmp1
@@ -24,7 +19,6 @@ cabal.sandbox.config
 .tmp3
 .stack-work
 src/Hspec
-notebooks
 dist
 **/dist
 **/.stack-work
