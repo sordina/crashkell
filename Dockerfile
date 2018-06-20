@@ -6,5 +6,7 @@ COPY ./notebooks ${HOME}
 RUN chown ${NB_USER} ${HOME}/*
 USER ${NB_USER}
 
+RUN jupyter trust ${HOME}/*
+
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0", "--NotebookApp.token=''"]
 
