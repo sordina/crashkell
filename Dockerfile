@@ -1,5 +1,5 @@
 
-FROM sordina/ihaskell:0.0.2
+FROM sordina/ihaskell:0.0.3
 
 USER root
 COPY ./notebooks ${HOME}
