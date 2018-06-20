@@ -2,6 +2,7 @@
 FROM sordina/ihaskell:0.0.3
 
 COPY ./notebooks ${HOME}
+RUN chown ${NB_USER} ${HOME}/*
 # USER root
 # USER ${NB_USER}
 
