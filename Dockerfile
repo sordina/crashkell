@@ -26,8 +26,12 @@ RUN ihaskell install --stack
 
 WORKDIR ${HOME}
 
+USER root
 RUN mkdir -p /notebooks
 COPY ./notebooks /notebooks/
+USER ${NB_USER}
 
-CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
+ENV PASSWORD=password
+
+CMD ["jupyter", "notebook", "--ip", "0.0.0.0", "--NotebookApp.token=''"]
 
