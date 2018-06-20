@@ -28,7 +28,7 @@ WORKDIR ${HOME}
 
 USER root
 RUN mkdir -p /notebooks
-COPY ./notebooks /notebooks/
+COPY ./notebooks ${HOME}
 USER ${NB_USER}
 
 ENV PASSWORD=password
