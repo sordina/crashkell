@@ -1,3 +1,3 @@
 
-.hint { color: white; }
-.hint:hover { color: black; }
+.hint       { color: white; max-height: 10px; overflow: auto; }
+.hint:hover { color: black; max-height: 600px; }
