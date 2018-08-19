@@ -9,7 +9,17 @@ $('.hint').each(function(){
 	var c = $("<h3 style='cursor: pointer;'>Click for hint...</h3>")
 	h.before(c)
 	c.click(function(){
-		c.hide('slow')
+		c.hide()
 		h.show('slow')
 	})
+})
+
+var toc = $('#crashkell-toc')
+var tocp = toc.parent()
+var c = $('<h3 style="cursor: pointer;">Click for table of contents...</h3>')
+tocp.before(c)
+tocp.hide()
+c.click(function(){
+	$(this).hide()
+	tocp.show('slow')
 })
