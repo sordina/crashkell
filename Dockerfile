@@ -9,7 +9,7 @@ USER ${NB_USER}
 COPY css/custom.css ${HOME}/.jupyter/custom/custom.css
 COPY js/custom.js   ${HOME}/.jupyter/custom/custom.js
 
-RUN jupyter trust ${HOME}/*
+RUN jupyter trust ${HOME}/*.ipynb
 
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0", "--NotebookApp.token=''"]
 
