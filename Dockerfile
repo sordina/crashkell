@@ -7,6 +7,7 @@ RUN chown ${NB_USER} ${HOME}/*
 USER ${NB_USER}
 
 COPY css/custom.css ${HOME}/.jupyter/custom/custom.css
+COPY js/custom.js   ${HOME}/.jupyter/custom/custom.js
 
 RUN jupyter trust ${HOME}/*
 

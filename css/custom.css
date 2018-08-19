@@ -1,3 +1,10 @@
 
-.hint       { color: white; max-height: 10px; overflow: auto; }
-.hint:hover { color: black; max-height: 600px; }
+.hint { max-height: 10em; overflow: auto; }
+.hint.hidden-hint { background: white; color: white; }
+.hint.hidden-hint * { background: white !important; color: white !important; }
+.hint.hidden-hint::before {
+	content: "Click for hint...";
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+}
