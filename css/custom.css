@@ -10,3 +10,7 @@
 	cursor: pointer;
 }
 */
+
+.cell img {
+	max-width: 90%;
+}
