@@ -1,0 +1,134 @@
+
+subgraph cluster_strings {
+	label="Strings";
+	about;
+	hello;
+	raven;
+	parens;
+	combining;
+	variables;
+	case;
+	wildcards;
+	types;
+	annotations;
+	bottles;
+
+	about -> hello;
+	raven -> hello;
+	hello -> parens;
+	parens -> combining;
+	combining -> variables;
+	variables -> case;
+	variables -> types;
+	variables -> annotations;
+	case -> wildcards;
+	types -> annotations;
+	variables -> bottles;
+	combining -> bottles;
+	annotations -> bottles;
+}
+
+subgraph cluster_numbers {
+	label="Numbers";
+	arithmetic;
+	bfimdas;
+	predecessors;
+	integers;
+	pythagoras;
+
+	arithmetic -> bfimdas;
+	case -> bfimdas;
+	arithmetic -> predecessors;
+	types -> integers;
+	arithmetic -> integers;
+	bfimdas -> pythagoras;
+	annotations -> pythagoras;
+}
+
+subgraph cluster_booleans {
+	label="Booleans";
+	truth;
+	equality;
+	not;
+	if;
+
+	pythagoras -> equality;
+	wildcards -> truth;
+	truth -> if;
+	equality -> if;
+	if -> not;
+}
+
+subgraph cluster_functions {
+	label="Functions";
+	hypotenuse;
+	matching;
+	guards;
+	operators;
+	referencing;
+	recursion;
+	collatz;
+	currying;
+	higher;
+
+	hypotenuse -> matching;
+	hypotenuse -> guards;
+	matching -> guards;
+	hypotenuse -> operators;
+	operators -> referencing;
+	hypotenuse -> recursion;
+	guards -> recursion;
+	recursion -> collatz;
+	hypotenuse -> currying;
+	operators -> higher;
+	recursion -> higher;
+	collatz -> higher;
+	currying -> higher;
+	referencing -> higher;
+
+	bfimdas -> hypotenuse;
+	not -> operators;
+}
+
+subgraph cluster_lists {
+	label="Lists";
+	onetwothree;
+	enumeration;
+}
+
+subgraph cluster_patterns {
+	label="Patterns";
+	nth;
+	nested;
+	named;
+	ignored;
+	merge;
+
+	nth -> nested;
+	nth -> named;
+	nth -> ignored;
+	nested -> merge;
+	named -> merge;
+	ignored -> merge;
+}
+
+subgraph cluster_lambdas {
+	label="Lambdas";
+	xxx1;
+}
+
+subgraph cluster_tuples {
+	label="Tuples";
+	xxx2;
+}
+
+subgraph cluster_data {
+	label="Data";
+	xxx3;
+}
+
+subgraph cluster_classes {
+	label="Classes";
+	xxx6;
+}
+
