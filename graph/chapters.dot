@@ -28,6 +28,17 @@ subgraph cluster_strings {
 	annotations -> bottles;
 }
 
+subgraph cluster_tuples {
+	label="Tuples";
+	constructing;
+	nesting;
+	getting;
+
+	constructing -> getting -> nesting;
+
+	hello -> constructing;
+}
+
 subgraph cluster_numbers {
 	label="Numbers";
 	arithmetic;
@@ -43,6 +54,8 @@ subgraph cluster_numbers {
 	arithmetic -> integers;
 	bfimdas -> pythagoras;
 	annotations -> pythagoras;
+
+	constructing -> arithmetic;
 }
 
 subgraph cluster_booleans {
@@ -93,42 +106,85 @@ subgraph cluster_functions {
 subgraph cluster_lists {
 	label="Lists";
 	onetwothree;
+	cons;
+	product;
 	enumeration;
+	sort;
+	map;
+	index;
+
+	onetwothree -> product;
+	cons -> sort;
+	product -> sort;
+	sort -> map;
+	sort -> index;
+	map -> index;
+
+	getting -> sort;
+	guards -> sort;
+	recursion -> sort;
+	higher -> map;
+	enumeration -> index;
 }
 
 subgraph cluster_patterns {
 	label="Patterns";
+	patuple;
 	nth;
 	nested;
 	named;
 	ignored;
-	merge;
+	patsort;
 
 	nth -> nested;
 	nth -> named;
 	nth -> ignored;
-	nested -> merge;
-	named -> merge;
-	ignored -> merge;
+	patuple -> nested;
+	patuple -> named;
+	nested -> patsort;
+	named -> patsort;
+	ignored -> patsort;
+
+	hypotenuse -> nth;
+	onetwothree -> nth;
+	sort -> patsort;
+
 }
 
 subgraph cluster_lambdas {
 	label="Lambdas";
-	xxx1;
-}
+	exclaim;
+	mappiply;
+	indexL;
 
-subgraph cluster_tuples {
-	label="Tuples";
-	xxx2;
+	exclaim -> mappiply;
+	mappiply -> indexL;
+
+	map -> exclaim;
+	index -> indexL;
 }
 
 subgraph cluster_data {
 	label="Data";
-	xxx3;
+	disjunction;
+	building;
+	animals;
+
+	disjunction -> building -> animals;
+
+	patsort -> building;
+	exclaim -> animals;
 }
 
 subgraph cluster_classes {
 	label="Classes";
-	xxx6;
+	noisy;
+	print;
+	sequencing;
+
+	noisy -> print -> sequencing;
+
+	animals -> noisy;
+
 }
 
