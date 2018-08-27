@@ -112,6 +112,7 @@ subgraph cluster_lists {
 	sort;
 	map;
 	index;
+	eulermap;
 
 	onetwothree -> product;
 	cons -> sort;
@@ -119,6 +120,7 @@ subgraph cluster_lists {
 	sort -> map;
 	sort -> index;
 	map -> index;
+	map -> eulermap;
 
 	getting -> sort;
 	guards -> sort;
