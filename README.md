@@ -11,6 +11,8 @@ Learn Haskell by Crashing!
 
 #### Project Structure
 
-	Branch: master - mybinder target and notebook storage branch
+	Branch: master - mybinder Most up-to-date non-event version
+	Branch: melbcompose19 - mybinder Compose 2019
+	Branch: melbcompose18 - mybinder Compoose 2018
 	Branch: base - Base image construction - currently sordina/ihaskell:0.0.3
 	Branch: old - Old non-ihaskell workshop content
