@@ -1,7 +1,6 @@
-/*
-$('.hint').addClass('hidden-hint')
-$('.hint').click(function(){$(this).removeClass('hidden-hint')})
-*/
+// Firefox doesn't seem to run the jQuery unless I add debugging statements????
+//
+console.log('test1')
 
 $('.hint').hide()
 $('.hint').each(function(){
@@ -14,6 +13,8 @@ $('.hint').each(function(){
 	})
 })
 
+console.log('test2')
+
 var toc = $('#crashkell-toc')
 var tocp = toc.parent()
 var c = $('<h3 style="cursor: pointer; color: #116;">Click for table of contents...</h3>')
@@ -23,3 +24,5 @@ c.click(function(){
 	$(this).hide()
 	tocp.show('slow')
 })
+
+console.log('test3')
