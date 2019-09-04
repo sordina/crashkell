@@ -190,3 +190,15 @@ subgraph cluster_classes {
 
 }
 
+subgraph cluster_imports {
+	label="Imports";
+	mandelbrot;
+	maze;
+
+	mandelbrot -> maze;
+	indexL -> mandelbrot;
+	sequencing -> mandelbrot;
+
+}
+
+
